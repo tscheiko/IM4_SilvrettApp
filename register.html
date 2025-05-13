@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Register Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrieren</title>
+  <link rel="stylesheet" href="css/register.css" />
 </head>
 <body>
-  <h1>Registrier dich</h1>
-  <form id="registerForm">
-    <label>Email:</label>
-    <input id="email" type="email" />
-    <br><br>
-    <label>Username:</label>
-    <input id="username" type="text" />
-    <br><br>
-    <label>Password:</label>
-    <input id="password" type="password" />
-    <br><br>
-    <button type="submit">Submit</button>
-    <p>Bereits Registriert? Jetzt <a href="login.html"> Einloggen</a></p>
+  <img src="img/kirche.jpeg" alt="Silvrettablick" />
 
+  <h1>SILVRETTAPP</h1>
+  <hr />
+
+  <form id="registerForm">
+    <label for="username">USERNAME</label>
+    <input id="username" type="text" />
+
+    <label for="email">E-MAIL</label>
+    <input id="email" type="email" />
+
+    <label for="password">PASSWORT</label>
+    <input id="password" type="password" />
+
+    <button type="submit">REGISTRIEREN</button>
+
+    <p>Bereits registriert? Jetzt <a href="login.html">Einloggen</a></p>
   </form>
 
   <script src="js/register.js"></script>

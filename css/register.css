@@ -1,0 +1,76 @@
+/* Allgemeines Layout */
+body {
+    background-color: #f9f1d2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bild oben */
+img {
+    width: 80%;
+    max-width: 400px;
+    margin-top: 30px;
+    border: 6px solid #4a2a16;
+    box-sizing: border-box;
+}
+
+/* Titel */
+h1 {
+    font-size: 2.2rem;
+    margin: 20px 0 10px;
+    color: #3a1e0d;
+    font-weight: bold;
+}
+
+/* Trenner */
+hr {
+    width: 80%;
+    max-width: 400px;
+    border: none;
+    border-top: 6px solid #4a2a16;
+    margin: 10px auto 20px;
+}
+
+/* Formular-Container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Input-Felder */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ccc;
+    width: 80%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    text-align: left;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+/* Registrieren-Button */
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #821f17;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
