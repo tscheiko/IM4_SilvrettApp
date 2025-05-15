@@ -29,7 +29,17 @@
     <div class="row"><span>30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
   </div>
 
-  <button class="button">RESERVIEREN</button>
+  <form id="reservationForm">
+    <label for="checkin">Check-in Datum:</label>
+    <input type="date" id="checkin" name="checkin" required />
+  
+    <label for="checkout">Check-out Datum:</label>
+    <input type="date" id="checkout" name="checkout" required />
+  
+    <button type="submit" class="button">RESERVIEREN</button>
+  </form>
+  
+  <div id="reservationResponse" style="margin-top: 20px; font-weight: bold;"></div>
   <script src="js/reservieren.js"></script>
 </body>
 </html>
