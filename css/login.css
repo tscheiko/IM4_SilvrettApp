@@ -78,7 +78,8 @@ button[type="submit"] {
 /* Link unten */
 p {
     margin-top: 20px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .error-box {
