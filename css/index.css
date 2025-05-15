@@ -1,54 +1,61 @@
 body {
     background-color: #f9f1d2;
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-}
-
-/* Titel oben */
-h1 {
+  }
+  
+  /* Titel oben */
+  h1 {
     font-size: 2.2rem;
     margin-top: 20px;
     color: #3a1e0d;
     font-weight: bold;
-}
-
-/* Trenner */
-hr {
-    width: 80%;
-    max-width: 400px;
+  }
+  
+  h1 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Trenner */
+  hr {
+    width: 100%;
+    height: 10px;
+    background-color: #4a2a16;
     border: none;
-    border-top: 6px solid #4a2a16;
-    margin: 10px auto 30px;
-}
-
-/* Bereichstitel */
-h2 {
+    margin: 20px 0 30px;
+  }
+  
+  
+  /* Bereichstitel */
+  h2 {
     font-size: 1.2rem;
     color: #000;
     font-weight: bold;
     margin: 10px auto 5px;
-}
-
-/* Beschreibungstext */
-p {
+  }
+  
+  /* Beschreibungstext */
+  p {
     font-size: 0.9rem;
     color: #111;
     margin: 0 20px 10px;
-}
-
-/* Bilder */
-img {
+  }
+  
+  /* Bilder */
+  img {
     width: 80%;
     max-width: 300px;
     border: 5px solid #4a2a16;
     margin: 10px 0;
-}
-
-/* Buttons */
-.button {
-    display: inline-block;
+  }
+  
+  .button {
+    display: block;
+    width: fit-content;
+    margin: 10px auto 30px;
     padding: 12px 24px;
     background-color: #821f17;
     color: white;
@@ -56,6 +63,15 @@ img {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 30px;
     text-decoration: none;
-}
+  }
+  
+  
+  /* Sektionen sauber stapeln */
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  

@@ -1,38 +1,52 @@
-
 console.log("Hello from login.js");
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
-  e.preventDefault(); // Formular‑Reload verhindern
+  e.preventDefault();
 
-  // ► Eingabewerte aus den Feldern holen
   const loginInfo = document.querySelector("#username-email").value.trim();
   const password = document.querySelector("#password").value;
+  const errorBox = document.getElementById("errorBox");
 
   if (!loginInfo || !password) {
-    alert("Bitte fülle alle Felder aus");
+    errorBox.textContent = "Bitte fülle alle Felder aus";
+    errorBox.style.display = "block";
     return;
   }
 
-  // FormData füllt PHPs $_POST automatisch
   const formData = new FormData();
   formData.append("loginInfo", loginInfo);
   formData.append("password", password);
 
-  // Fetch
   try {
     const res = await fetch("api/login.php", {
       method: "POST",
       body: formData,
     });
-    const reply = await res.text(); // login.php schickt nur Klartext zurück
-    console.log("Antwort vom Server:\n" + reply);
-    alert(reply);
 
-    if (reply === "Login erfolgreich") {
-      // redirect to protected.html
+    const reply = await res.text();
+    console.log("Antwort vom Server:", JSON.stringify(reply));
+
+    if (reply.trim().startsWith("Login erfolgreich:")) {
+      const parts = reply.trim().split(":");
+      const username = parts[1] ? parts[1].trim() : "Gast";
+    
+      localStorage.setItem("username", username);
       window.location.href = "index.html";
+    } else {
+      errorBox.textContent = reply.trim();
+      errorBox.style.display = "block";
     }
+    
   } catch (err) {
     console.error("Fehler beim Senden:", err);
+    errorBox.textContent = "Fehler beim Verbinden mit dem Server.";
+    errorBox.style.display = "block";
   }
+});
+
+// Fehleranzeige ausblenden beim Tippen
+document.querySelectorAll("input").forEach((input) => {
+  input.addEventListener("input", () => {
+    document.getElementById("errorBox").style.display = "none";
+  });
 });

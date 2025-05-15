@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('../system/config.php');
@@ -19,7 +18,8 @@ if ($user){
 
     // passwort prüfen
     if (password_verify($password, $user['password'])) {
-        echo "Login erfolgreich";
+        // Erfolg + Username zurückgeben
+        echo "Login erfolgreich:" . $user['username'];
 
         // session starten
         session_start();
@@ -31,15 +31,6 @@ if ($user){
         echo "Passwort ist nicht korrekt";
     }
 
-
-
 } else {
-
     echo "Benutzername oder E-Mail nicht korrekt.";
-
 }
-
-
-
-
-// echo "Habe folgende Daten erhalten, LoginInfo: {$loginInfo}, Passwort: {$password}";
