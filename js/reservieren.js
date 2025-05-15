@@ -1,16 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const savedUsername = localStorage.getItem("username");
-  
-    if (savedUsername) {
-      const usernameElement = document.getElementById("username");
-      if (usernameElement) {
-        usernameElement.textContent = savedUsername.toUpperCase();
-      }
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedUsername = localStorage.getItem("username");
     if (savedUsername) {
       const usernameElement = document.getElementById("username");
       if (usernameElement) {
@@ -18,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // Reservation absenden
     const form = document.getElementById("reservationForm");
     const responseBox = document.getElementById("reservationResponse");
   
@@ -32,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
         if (!checkin || !checkout) {
           responseBox.textContent = "Bitte beide Daten ausfüllen.";
+          responseBox.className = "error-message";
+          responseBox.style.display = "block";
           return;
         }
   
@@ -48,9 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
   
           const reply = await res.text();
           responseBox.textContent = reply.trim();
+          responseBox.style.display = "block";
+  
+          if (reply.includes("bearbeitet")) {
+            responseBox.classList.remove("error-message");
+            responseBox.classList.add("success-message");
+          } else {
+            responseBox.classList.remove("success-message");
+            responseBox.classList.add("error-message");
+          }
         } catch (err) {
           console.error("Fehler beim Reservieren:", err);
           responseBox.textContent = "Fehler beim Senden. Bitte später erneut versuchen.";
+          responseBox.className = "error-message";
+          responseBox.style.display = "block";
         }
       });
     }

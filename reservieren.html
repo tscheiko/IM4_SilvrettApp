@@ -6,6 +6,7 @@
   <title>Reservieren</title>
   <link rel="stylesheet" href="css/reservieren.css" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  
 
 </head>
 <body>
@@ -16,18 +17,7 @@
 
   <img src="img/schlafzimmer.png" alt="Schlafzimmer" />
 
-  <h3>RESERVATIONSTOOL<br>JUNI</h3>
-
-  <div class="calendar">
-    <div class="row header">
-      <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>1</span>
-    </div>
-    <div class="row"><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
-    <div class="row"><span>9</span><span>10</span><span>11</span><span class="disabled">12</span><span>13</span><span>14</span><span>15</span></div>
-    <div class="row"><span>16</span><span>17</span><span>18</span><span>19</span><span class="selected">20</span><span class="selected">21</span><span class="selected">22</span></div>
-    <div class="row"><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span></div>
-    <div class="row"><span>30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
-  </div>
+  <div id="reservationResponse"></div>
 
   <form id="reservationForm">
     <label for="checkin">Check-in Datum:</label>
@@ -38,8 +28,7 @@
   
     <button type="submit" class="button">RESERVIEREN</button>
   </form>
-  
-  <div id="reservationResponse" style="margin-top: 20px; font-weight: bold;"></div>
+
   <script src="js/reservieren.js"></script>
 </body>
 </html>
