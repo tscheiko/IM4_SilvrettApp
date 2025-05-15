@@ -52,8 +52,10 @@ body {
   }
   
   p {
-    font-size: 1rem;
-    margin: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin: 0 0 12px;
+    line-height: 1.4;
   }
   
   a {

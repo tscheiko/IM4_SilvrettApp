@@ -28,9 +28,12 @@ $stmt->execute([
 $exists = $stmt->fetch();
 
 if ($exists) {
-    echo "Die Wohnung ist in diesem Zeitraum leider schon reserviert.";
+    $belegtVon = date('d.m.y', strtotime($exists['checkin']));
+    $belegtBis = date('d.m.y', strtotime($exists['checkout']));
+    echo "Die Wohnung ist vom $belegtVon bis $belegtBis leider schon von einer anderen Person reserviert.";
     exit;
 }
+
 
 // Wenn frei → speichern
 $insert = $pdo->prepare("INSERT INTO reservationen (username, checkin, checkout) 

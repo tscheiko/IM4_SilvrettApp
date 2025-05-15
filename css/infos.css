@@ -48,13 +48,14 @@ img {
 }
 
 h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
+    font-size: 1.4rem;         /* vorher: 1.2rem */
+    font-weight: 700;          /* statt normal 600 */
+    margin: 20px auto 10px;
+  }
 
 p {
-    font-size: 0.95rem;
-    margin: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin: 0 0 12px;
     line-height: 1.4;
-}
+  }

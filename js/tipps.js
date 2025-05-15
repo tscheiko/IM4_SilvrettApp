@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const savedUsername = localStorage.getItem("username");
+    const username = savedUsername ? savedUsername.toUpperCase() : "DICH";
   
-    if (savedUsername) {
-      const usernameElement = document.getElementById("username");
-      if (usernameElement) {
-        usernameElement.textContent = savedUsername.toUpperCase();
-      }
+    const usernameElement = document.getElementById("username");
+    if (usernameElement) {
+      usernameElement.textContent = username;
     }
   });

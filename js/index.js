@@ -1,14 +1,15 @@
 console.log("Hello from index.js");
 
-// Username aus localStorage holen
-const savedUsername = localStorage.getItem("username");
+document.addEventListener("DOMContentLoaded", () => {
+  const savedUsername = localStorage.getItem("username");
 
-// Wenn vorhanden → Text auf der Seite ersetzen
-if (savedUsername) {
-  const usernameElements = document.querySelectorAll("#username");
-  usernameElements.forEach((el) => {
-    el.textContent = savedUsername.toUpperCase();
-  });
-}
+  if (savedUsername) {
+    const title = document.getElementById("begrüssungstitel");
+    if (title) {
+      title.textContent = `BAINVEGNI ${savedUsername.toUpperCase()}`;
+    }
+  }
+});
+
 
 console.log("Gespeicherter Benutzer:", savedUsername);
