@@ -100,3 +100,6 @@ body {
     color: black;
   }
   
+  #username {
+    text-transform: uppercase;
+  }
